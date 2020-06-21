@@ -24,17 +24,17 @@ const renderCode = ({
   titleString = '测试测试'
 } = {}) => {
   // 获取 colums Code
-  const columsString = getTargetColumns(tableDomArr)
+  // const columsString = getTargetColumns(tableDomArr)
 
   // 获取 table Code
-  const codeString = getTargetTable(columsString)
+  // const codeString = getTargetTable(columsString)
 
   // 获取所有的对象
   const params = {
     codeType: 'table',
     getCodeItem,
     Title: titleString,
-    Code: codeString,
+    // Code: codeString,
     DataName: tableDataName,
     domArr: tableDomArr
   }

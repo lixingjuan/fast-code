@@ -1,19 +1,3 @@
-/*
- * @type:
- * @Author: lixingjuan <xingjuan.li@hand-china.com>
- * @Date: 2020-06-08 10:50:51
- * @copyright: Copyright (c) 2019, Hand
- */
-
-/**
- * @des : type
- * 1. {select} 下拉选
- * 2. {input} el-input, 可编辑，icon为search
- * 3. {textMoney} cd-text-money
- * 4. {inputMoney} cd-input-money
- * 5. {datePicker} el-date-picker YYYY-MM-DD 格式
- * @return:
- */
 // type:money
 // remark: 除了显示字段外的字
 // const formDomArr = [
@@ -68,14 +52,19 @@
 
 // 历史授信峰值
 const formDomArr = [
-  { field: '', label: '历史授信时间', value: '', type: 'text' },
   {
     field: 'historyCreditTime',
+    label: '历史授信时间',
+    value: '',
+    type: 'dateText'
+  },
+  {
+    field: '',
     label: '历史授信峰值',
     value: '',
-    type: 'date'
+    type: 'text'
   },
-  { field: '', label: '授信峰值分析', value: '', type: 'text' }
+  { field: '', label: '授信峰值分析', value: '', type: 'textArea' }
 ]
 
 // 模版

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const ejs = require('ejs')
-const { targetPosition } = require('../common')
+const { targetPosition, templetePostion, getCodeItem } = require('../common')
 const formDomArr = require('./formDomArr')
 const getFormItems = require('./getFormItems')
 
@@ -56,25 +56,22 @@ const renderCode = ({
 
   // 获取所有的参数
   const params = {
+    getCodeItem,
+    codeType: 'form',
     Title: titleString,
     Code: codeString,
     DataName: formDataName,
     domArr: formDomArr
   }
   // 获取最终代码，并且使用fs写入
-  ejs.renderFile(
-    path.join(path.dirname(__dirname), '/common/pageTemplete.vue'),
-    params,
-    'utf-8',
-    function(error, str) {
-      console.log(str)
-      if (error) {
-        console.error('ejs模版处理出错', error)
-        return
-      }
-      fs.writeFileSync(targetPosition, str)
+  ejs.renderFile(templetePostion, params, 'utf-8', function(error, str) {
+    console.log(str)
+    if (error) {
+      console.error('ejs模版处理出错', error)
+      return
     }
-  )
+    fs.writeFileSync(targetPosition, str)
+  })
 }
 
 renderCode()
