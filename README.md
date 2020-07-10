@@ -85,6 +85,16 @@ v-loading="isLoading"
 2. form  => ./table/formDomArr.js
 
 
+修改后执行
+
+```bash
+yarn table
+# OR 
+yarn form
+
+```
+
+
 
 解释
 
@@ -132,14 +142,12 @@ const formDomArr = [
 │ 
 ├── form
 │   ├── formDomArr.js         // 🍄修改该文件
-│   ├── getFormItems.js
-│   └── index.js
+│   └── index.js              // 执行入口
 │ 
 ├── table
 │   ├── generateTableData.js
-│   ├── getTargetColumns.js
 │   ├── tableDomArr.js         // 🍄修改该文件
-│   └── index.js
+│   └── index.js              // 执行入口
 │ 
 ├── index.vue                  // 目标文件
 ├── package.json

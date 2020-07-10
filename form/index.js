@@ -28,15 +28,6 @@ const generateForm = ({
 }
 
 /**
- * @des 生成只读form
- * @param {Number} lineNumber  列数，默认3列
- */
-// generateForm({ formDataName: 'formData', columnsNumber: 2 })
-
-/* 生成只读form模拟数据 */
-// generateFormData()
-
-/**
  * @des 生成form component
  * @param {String} formDataName form的data
  * @param {Number} columnsNumber form的列数
