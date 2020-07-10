@@ -98,7 +98,7 @@ yarn form
 
 解释
 
-- field: 字段
+- field: 字段;  (注:若暂无字段，默认生成todo)
 - label: table中是列名/form中是label;
 - value: 接口暂无时的测试值;
 - type: 选项;
@@ -111,6 +111,7 @@ yarn form
   - input: 普通文本输入框;
   - inputTextArea: textArea输入框;
 - width: 宽度，不常用
+
 
 ```js
 /* table模版 */
@@ -158,4 +159,6 @@ const formDomArr = [
 
 
 
-注: 该脚本仅提供参考思路，如使用请按照项目情况和需求进行修改;
+注: 
+1. 该脚本仅提供参考思路，如使用请按照项目情况和需求进行修改;
+2. 搭配 prettier & 各种快捷键 食用更佳，不然生成的代码略丑;
