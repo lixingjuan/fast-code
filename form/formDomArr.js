@@ -51,26 +51,105 @@
 // ]
 
 // 历史授信峰值
+// const formDomArr = [
+//   {
+//     field: 'historyCreditTime',
+//     label: '历史授信时间',
+//     value: '',
+//     type: 'datePicker'
+//   },
+//   {
+//     field: '',
+//     label: '历史授信峰值',
+//     value: '',
+//     type: 'input'
+//   },
+//   { field: '', label: '授信峰值分析', value: '', type: 'inputTextArea' }
+// ]
+
+/* 债务双方 */
+// const formDomArr = [
+//   { field: '债权人', label: '', value: '', type: 'input' },
+//   { field: '债务人', label: '', value: '', type: 'input' }
+// ]
+
+/* 债权人，债务人公司介绍 */
+// const formDomArr = [
+//   { field: '', label: '债权人', value: '', type: 'text', width: '' },
+//   {
+//     field: 'registeredAddress',
+//     label: '企业注册地',
+//     value: '',
+//     type: 'text',
+//     width: ''
+//   },
+//   {
+//     field: 'orgEquity',
+//     label: '公司股权信息',
+//     value: 'text',
+//     type: 'text',
+//     width: ''
+//   },
+//   {
+//     field: 'orgProduct',
+//     label: '公司产品及范围',
+//     value: '',
+//     type: 'inputTextArea',
+//     width: ''
+//   }
+// ]
+
+/* 模版 */
+// const formDomArr = [
+//   {
+//     field: '',
+//     label: '风险提示及综合评估',
+//     value: '',
+//     type: 'inputTextArea',
+//     width: ''
+//   },
+//   { field: '', label: '结论', value: '', type: 'radio', width: '' },
+//   { field: '', label: '综合说明', value: '', type: 'inputTextArea', width: '' },
+//   {
+//     field: '',
+//     label: '资产巡视要点',
+//     value: '',
+//     type: 'inputTextArea',
+//     width: ''
+//   }
+// ]
+
+/* 核心指标检视 */
+// const moduleTitle = '核心指标检视'
+// const formDomArr = [
+//   { field: '', label: '行业分析数据表', value: '', type: 'button' },
+//   { field: '', label: '行业分析', value: '', type: 'inputTextArea' },
+//   { field: '', label: '评分模型结果', value: '', type: 'text' },
+//   { field: '', label: '财务报表分析', value: '', type: 'button' },
+//   { field: '', label: '损益表', value: '', type: 'text' },
+//   { field: '', label: '损益表分析', value: '', type: 'inputTextArea' },
+//   { field: '', label: '资产负债表', value: '', type: 'text' },
+//   { field: '', label: '资产负债表分析', value: '', type: 'inputTextArea' },
+//   { field: '', label: '现金流量表', value: '', type: 'text' },
+//   { field: '', label: '现金流量分析', value: '', type: 'inputTextArea' },
+//   { field: '', label: '财务分析表', value: '', type: 'text' },
+//   { field: '', label: '财务表分析', value: '', type: 'inputTextArea' }
+// ]
+
+/* 对外公开信息查询 */
+const moduleTitle = '对外公开信息查询'
 const formDomArr = [
-  {
-    field: 'historyCreditTime',
-    label: '历史授信时间',
-    value: '',
-    type: 'dateText'
-  },
-  {
-    field: '',
-    label: '历史授信峰值',
-    value: '',
-    type: 'text'
-  },
-  { field: '', label: '授信峰值分析', value: '', type: 'textArea' }
+  { field: '', label: '中登网', value: '', type: 'inputTextArea' },
+  { field: '', label: '法律诉讼', value: '', type: 'inputTextArea' },
+  { field: '', label: '第三方征信', value: '', type: 'inputTextArea' },
+  { field: '', label: '集团黑名单', value: '', type: 'inputTextArea' }
 ]
 
-// 模版
+/* 模版 */
+// const moduleTitle = ''
 // const formDomArr = [
 //   { field: '', label: '', value: '', type: 'text' },
 //   { field: '', label: '', value: '', type: 'text' }
 // ]
 
-module.exports = formDomArr
+module.exports = { formDomArr, moduleTitle }

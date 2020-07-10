@@ -1,8 +1,7 @@
 const fs = require('fs')
-const path = require('path')
 const ejs = require('ejs')
 const { targetPosition, templetePostion, getCodeItem } = require('../common')
-const formDomArr = require('./formDomArr')
+const { formDomArr, moduleTitle } = require('./formDomArr')
 const getFormItems = require('./getFormItems')
 
 /**
@@ -40,14 +39,9 @@ const generateForm = ({
 /**
  * @des 生成form component
  * @param {String} formDataName form的data
- * @param {String} titleString 模块标题
  * @param {Number} columnsNumber form的列数
  */
-const renderCode = ({
-  formDataName = 'formData',
-  titleString = '测试测试',
-  columnsNumber = 2
-} = {}) => {
+const renderCode = ({ formDataName = 'formData', columnsNumber = 2 } = {}) => {
   // form code String
   const codeString = generateForm({
     formDataName,
@@ -58,7 +52,7 @@ const renderCode = ({
   const params = {
     getCodeItem,
     codeType: 'form',
-    Title: titleString,
+    Title: moduleTitle,
     Code: codeString,
     DataName: formDataName,
     domArr: formDomArr
@@ -74,4 +68,6 @@ const renderCode = ({
   })
 }
 
-renderCode()
+renderCode({
+  formDataName: 'formData'
+})

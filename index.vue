@@ -1,83 +1,47 @@
 <template>
   <el-row>
-    <cd-border-title title="测试测试" :style="{ margin: '40px 0 30px 0' }" />
-    <el-form-item :model='DataName'>
-    
-     
-        
-        
-        
-            <el-form-item label="历史授信时间:" prop="historyCreditTime">
-        
+    <cd-border-title
+      title="主力银行账号"
+      :style="{ margin: '40px 0 30px 0' }"
+    />
+    <el-table :data="tableData">
+      <el-table-column show-overflow-tooltip prop="todo1" label="户名信息" />
 
+      <el-table-column show-overflow-tooltip prop="todo2" label="银行名称" />
 
-              <cd-text-date>历史授信时间 </cd-text-date> 
-        
+      <el-table-column show-overflow-tooltip prop="todo3" label="开户行信息" />
 
-        
-            </el-form-item>
-        
+      <el-table-column show-overflow-tooltip prop="todo4" label="账号" />
 
-        
-     
-        
-        
-        
-            <el-form-item label="历史授信峰值:" prop="">
-        
-
-
-              <el-input type="textArea" :rows='3' v-model=''/> 
-        
-
-        
-            </el-form-item>
-        
-
-        
-     
-        
-        
-        
-            <el-form-item label="授信峰值分析:" prop="">
-        
-
-
-              <el-input type="textArea" :rows='3' v-model=''/> 
-        
-
-        
-            </el-form-item>
-        
-
-        
-    
-
-    </el-form>
+      <el-table-column show-overflow-tooltip prop="todo5" label="操作">
+        <template slot-scope="scope">
+          <el-button type="text"> 操作 </el-button>
+        </template>
+      </el-table-column>
+    </el-table>
   </el-row>
 </template>
 
 <script>
-
-
 export default {
   name: '',
   components: {},
   props: {},
   data() {
     return {
-      formData : [{
+      tableData: [
+        {
+          todo1: '测试数据',
 
-        
-            historyCreditTime : '测试数据',
-        
-            todo2 : '测试数据',
-        
-            todo3 : '测试数据',
-        
+          todo2: '测试数据',
 
-      }]
+          todo3: '测试数据',
 
+          todo4: '测试数据',
+
+          todo5: '测试数据'
+        }
+      ]
     }
   },
   computed: {},

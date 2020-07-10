@@ -2,22 +2,28 @@
  * @des 判断类型
  * @param {Array} tableDomArr 要遍历的表格数据
  */
-const getCodeItem = ({ field, label, type, codeType, DataName }) => {
+const getCodeItem = ({ field, label, type, codeType, DataName, index }) => {
   let codeItem
   console.log('getCodeItem被执行')
-  const realField =
-    codeType === 'table'
-      ? `scope.row.${field}`
-      : ['input', 'select'].includes(type)
-      ? `${DataName}.${field}`
-      : field
+
+  let realField
+
+  if (codeType === 'table' && (!type || type === 'text')) {
+    realField = field || `todo${index + 1}`
+  } else if (codeType === 'table' && type) {
+    realField = field ? `scope.row.${field}` : `scope.row.todo${index + 1}`
+  } else if (codeType === 'form') {
+    realField = field ? `${DataName}.${field}` : `${DataName}.todo${index + 1}`
+  } else {
+    realField = ''
+  }
 
   if (type === 'datePicker') {
-    codeItem = `<cd-text-money>{{ ${realField} }}</cd-text-money>`
+    codeItem = `<el-date-picker v-model.trim="${realField}" format="yyyy-MM-dd" value-format="yyyy-MM-dd" />`
   } else if (type === 'dateText') {
-    codeItem = `<cd-text-date>${label} </cd-text-date>`
+    codeItem = `<cd-text-date>{{ ${realField} }} </cd-text-date>`
   } else if (type === 'moneyInput') {
-    codeItem = `<cd-input-money>{{ ${realField} }}</cd-input-money>`
+    codeItem = `<cd-input-money v-model="${realField}" />`
   } else if (type === 'moneyText') {
     codeItem = `<cd-text-money>{{ ${realField} }}</cd-text-money>`
   } else if (type === 'select') {
@@ -39,66 +45,25 @@ const getCodeItem = ({ field, label, type, codeType, DataName }) => {
     codeItem = `<el-input type="text" v-model='${realField}'/>`
   } else if (type === 'button') {
     codeItem = `<el-button type="text"> ${label} </el-button>`
-  } else if (type === 'textArea') {
-    codeItem = `<el-input type="textArea" :rows='3' v-model='${realField}'/>`
-  } else if (type === 'text') {
-    codeItem = `<el-input type="textArea" :rows='3' v-model='${realField}'/>`
+  } else if (type === 'radio') {
+    codeItem = `
+    <el-radio-group v-model="radio">
+      <el-radio :label="3">备选项</el-radio>
+      <el-radio :label="6">备选项</el-radio>
+      <el-radio :label="9">备选项</el-radio>
+    </el-radio-group>`
+  } else if (type === 'inputTextArea') {
+    codeItem = `<el-input type="textarea" :rows="3" v-model='${realField}'/>`
+  } else if (type === 'text' && codeType === 'form') {
+    codeItem = `${realField}`
+  } else if (!type && codeType === 'table') {
+    codeItem = ``
   } else {
     return `type为${type}， 无该判断，请添加`
   }
   console.log(codeItem)
   return codeItem
 }
-
-// const getTableItem = itemParam => {
-//   const { field, label, type, DataName } = itemParam
-
-//   let columnItem = ''
-
-//   if (!type || type === 'text') {
-//     columnItem = `
-//         <el-form-item label="${label}:" prop="${field}">
-//           <cd-text class="bold" :data="${DataName}.${field}" />
-//         </el-form-item>`
-//   } else {
-//     columnItem = `
-//         <el-form-item label="${label}:" prop="${field}">
-//           ${getComponent(itemParam)}
-//         </el-form-item>`
-//   }
-//   return columnItem
-// }
-
-/**
- * @des :
- * @param {Array} formDomArr 用于生成form-item的字段及其参数
- * @param {Number} columnsNumber form的列数
- * @param {String} DataName form绑定的model的名称
- * @return:
- */
-// const getFormItem = itemParam => {
-//   const { field, label, type, DataName } = itemParam
-
-//   let formItem = ''
-
-//   if (!type || type === 'text') {
-//     formItem = `
-//         <el-form-item label="${label}:" prop="${field}">
-//           <cd-text class="bold" :data="${DataName}.${field}" />
-//         </el-form-item>`
-//   } else {
-//     formItem = `
-//         <el-form-item label="${label}:" prop="${field}">
-//           ${getComponent(itemParam)}
-//         </el-form-item>`
-//   }
-//   return formItem
-// }
-
-// const getCodeItem = itemParam => {
-//   let codeItem = getComponent(itemParam)
-//   return codeItem
-// }
 
 module.exports = getCodeItem
 

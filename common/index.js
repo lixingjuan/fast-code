@@ -13,3 +13,14 @@ module.exports = {
   targetPosition,
   templetePostion
 }
+
+const a = 'money'
+switch (a) {
+  case a.includes('money'):
+    console.log('11')
+    break
+
+  default:
+    console.log('2')
+    break
+}

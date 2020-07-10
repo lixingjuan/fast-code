@@ -33,7 +33,7 @@ const getTargetcolumns = tableDomArr => {
           ${columnProp}
         >
           <template slot-scope="scope">
-            <cd-text-date type="text">${cur.label} </cd-text-date>
+            <cd-text-date type="text">{{  }}</cd-text-date>
           </template>
         </el-table-column>`
     } else if (cur.type && cur.type === 'moneyText') {

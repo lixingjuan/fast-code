@@ -1,17 +1,8 @@
 const fs = require('fs')
 const ejs = require('ejs')
 
-const tableDomArr = require('./tableDomArr')
-const getTargetColumns = require('./getTargetColumns')
+const { tableDomArr, moduleTitle } = require('./tableDomArr')
 const { targetPosition, templetePostion, getCodeItem } = require('../common')
-
-const getTargetTable = targetcolumns => {
-  return `
-    <el-table :data="tableData" style="width: 100%">
-      ${targetcolumns}
-    </el-table>
-    `
-}
 
 /**
  * @des 渲染最终code
@@ -19,21 +10,12 @@ const getTargetTable = targetcolumns => {
  * @param {rowNumber} Number 模块标题
  * @return:
  */
-const renderCode = ({
-  tableDataName = 'tableData',
-  titleString = '测试测试'
-} = {}) => {
-  // 获取 colums Code
-  // const columsString = getTargetColumns(tableDomArr)
-
-  // 获取 table Code
-  // const codeString = getTargetTable(columsString)
-
+const renderCode = ({ tableDataName = 'tableData' } = {}) => {
   // 获取所有的对象
   const params = {
     codeType: 'table',
     getCodeItem,
-    Title: titleString,
+    Title: moduleTitle,
     // Code: codeString,
     DataName: tableDataName,
     domArr: tableDomArr
@@ -50,4 +32,6 @@ const renderCode = ({
   })
 }
 
-renderCode()
+renderCode({
+  tableDataName: 'tableData'
+})

@@ -1,3 +1,4 @@
+/* 开发时语法测试文件 */
 const ejs = require('ejs')
 const path = require('path')
 
@@ -37,3 +38,11 @@ ejs.renderFile(
     // fs.writeFileSync(targetPosition, str)
   }
 )
+
+// item.value
+//   ? `${item.value}`
+//   : item.type.includes('money')
+//   ? '123456789'
+//   : item.type.includes('money')
+//   ? '2020-08-08'
+//   : "'测试数据'"

@@ -6,6 +6,9 @@
  * 4. moneyInput
  * 5. select
  * 6. button
+ * 7. radio
+ * 7. input
+ * 8. inputTextArea
  */
 
 // const tableDomArr = [
@@ -37,7 +40,7 @@
 //   {
 //     label: '应收账款金额',
 //     value: '1000.000.00',
-//     type: 'amount-text',
+//     type: 'moneyText',
 //     width: ''
 //   },
 //   { label: '应收账款类型', value: '现有应收账款', type: '', width: '' },
@@ -150,23 +153,146 @@
 // 项目额度往来
 // const tableDomArr = [
 //   { field: '', label: '类型', value: '', type: '', width: '' },
-//   { field: '', label: '总金额', value: '', type: 'amount-text', width: '' },
-//   { field: '', label: '保证金', value: '', type: 'amount-text', width: '' },
-//   { field: '', label: '信用敞口', value: '', type: 'amount-text', width: '' }
+//   { field: '', label: '总金额', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '保证金', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '信用敞口', value: '', type: 'moneyText', width: '' }
 // ]
 
 // 债务双方
+// const tableDomArr = [
+//   { field: 'test', label: '增信类型', value: '', type: '', width: '' },
+//   { field: '', label: '增信方', value: '', type: '', width: '' },
+//   { field: '', label: '增信有效期', value: '', type: 'dateText', width: '' },
+//   { field: '', label: '增信金额', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '备注', value: '', type: '', width: '' }
+// ]
+
+// 申请记录
+// const tableDomArr = [
+//   { field: '', label: '项目编号', value: '', type: '', width: '' },
+//   { field: '', label: '申请时间', value: '', type: 'dateText', width: '' },
+//   { field: '', label: '申请金额', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '审批金额', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '已用额度', value: '', type: 'moneyText', width: '' },
+//   { field: '', label: '未清本金', value: '', type: 'moneyText', width: '' }
+// ]
+
+/* 履约记录 */
+// const tableDomArr = [
+//   { field: '', label: '项目编号', value: '', type: '', width: '' },
+//   { field: '', label: '融资申请单', value: '', type: '', width: '' },
+//   { field: '', label: '放款时间', value: '', type: 'dateText', width: '' },
+//   { field: '', label: '宽限期次数', value: '', type: '', width: '' },
+//   { field: '', label: '逾期次数', value: '', type: '', width: '' }
+// ]
+
+/* 行业分析-选择数据来源 */
+// const tableDomArr = [
+//   {
+//     field: '',
+//     label: '提交时间',
+//     value: '2019-11-24 12:30:00',
+//     type: '',
+//     width: 'dateText'
+//   },
+//   {
+//     field: '',
+//     label: '资料要求',
+//     value: '提供仅三年财报',
+//     type: '',
+//     width: ''
+//   },
+//   {
+//     field: '',
+//     label: '文件',
+//     value: '企业简介.xlsx',
+//     type: '',
+//     width: 'button'
+//   },
+//   { field: '', label: '提交人', value: '', type: '', width: '' },
+//   { field: '', label: '备注', value: '', type: '', width: '' },
+//   { field: '', label: '操作', value: '解析', type: '', width: 'button' }
+// ]
+
+/* 页面最底部条件 */
+// const tableDomArr = [
+//   { field: '', label: '序号', value: '', type: '', width: '' },
+//   { field: '', label: '条件分类', value: '', type: 'select', width: '' },
+//   { field: '', label: '管理岗位', value: '', type: 'select', width: '' },
+//   { field: '', label: '管理类型', value: '', type: 'select', width: '' },
+//   { field: '', label: '频率', value: '', type: 'select', width: '' },
+//   { field: '', label: '条件说明', value: '', type: 'input', width: '' },
+//   { field: '', label: '操作', value: '', type: 'button', width: '' }
+// ]
+
+/* 金融机构往来 */
+// const tableDomArr = [
+//   { field: '', label: '授信主体', value: '', type: 'input', width: '' },
+//   { field: '', label: '授信机构', value: '', type: 'input', width: '' },
+//   { field: '', label: '业务种类', value: '', type: 'input', width: '' },
+//   { field: '', label: '额度', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '余额', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '生效日期', value: '', type: 'datePicker', width: '' },
+//   { field: '', label: '操作', value: '', type: 'button', width: '' }
+// ]
+
+/* 负债结果 */
+// const tableDomArr = [
+//   { field: '', label: '来往机构', value: '', type: 'input', width: '' },
+//   { field: '', label: '来往科目', value: '', type: 'input', width: '' },
+//   { field: '', label: '借款期间', value: '', type: 'datePicker', width: '' },
+//   { field: '', label: '额度', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '实际借款', value: '', type: 'moneyInput', width: '' },
+//   {
+//     field: '',
+//     label: '担保方式或担保品',
+//     value: '',
+//     type: 'input',
+//     width: ''
+//   },
+//   { field: '', label: '操作', value: '', type: 'button', width: '' }
+// ]
+
+/* 对外担保情况 */
+// const moduleTitle = '对外担保情况'
+// const tableDomArr = [
+//   { field: '', label: '短期借款', value: '', type: 'input', width: '' },
+//   { field: '', label: '长期借款', value: '', type: 'input', width: '' },
+//   { field: '', label: '承兑汇票', value: '', type: 'input', width: '' },
+//   { field: '', label: '保理', value: '', type: 'input', width: '' },
+//   { field: '', label: '租赁', value: '', type: 'input', width: '' },
+//   { field: '', label: '其他', value: '', type: 'input', width: '' },
+//   { field: '', label: '合计', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '备注', value: '', type: 'input', width: '' },
+//   { field: '', label: '操作', value: '', type: 'button', width: '' }
+// ]
+
+/* 资产清单 */
+// const moduleTitle = '资产清单'
+// const tableDomArr = [
+//   { field: '', label: '所有权人', value: '', type: '', width: '' },
+//   { field: '', label: '资产类型', value: '', type: '', width: '' },
+//   { field: '', label: '房产面积', value: '', type: '', width: '' },
+//   { field: '', label: '市价', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '购入价', value: '', type: 'moneyInput', width: '' },
+//   { field: '', label: '地址', value: '', type: '', width: '' },
+//   { field: '', label: '操作', value: '', type: 'button', width: '' }
+// ]
+
+/* 主力银行账号 */
+const moduleTitle = '主力银行账号'
 const tableDomArr = [
-  { field: 'test', label: '增信类型', value: '', type: '', width: '' },
-  { field: '', label: '增信方', value: '', type: '', width: '' },
-  { field: '', label: '增信有效期', value: '', type: 'date', width: '' },
-  { field: '', label: '增信金额', value: '', type: 'amount-text', width: '' },
-  { field: '', label: '备注', value: '', type: '', width: '' }
+  { field: '', label: '户名信息', value: '', type: '', width: '' },
+  { field: '', label: '银行名称', value: '', type: '', width: '' },
+  { field: '', label: '开户行信息', value: '', type: '', width: '' },
+  { field: '', label: '账号', value: '', type: '', width: '' },
+  { field: '', label: '操作', value: '', type: 'button', width: '' }
 ]
 
-module.exports = tableDomArr
+module.exports = { tableDomArr, moduleTitle }
 
 /* 模版 */
+// const moduleTitle = '模版'
 // const tableDomArr = [
 //   { field:'', label: '', value: '', type: '', width: '' },
 //   { field:'', label: '', value: '', type: '', width: '' },
